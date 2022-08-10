@@ -5,14 +5,11 @@ class Solution {
         int l = 0, r = arr.length -1, mid, k = 0;
         while (l<=r) {
             mid = (r-l) / 2 + l;
-            if(arr[r]>arr[mid]) {
+            if(arr[mid]<=arr[arr.length - 1]) {
                 r = mid - 1;
-                if(arr[mid]<arr[k])
-                    k = mid;
+                k = mid;
             } else {
                 l = mid +1;
-                if(arr[r]<arr[k])
-                    k = r;
             }
         }
         
